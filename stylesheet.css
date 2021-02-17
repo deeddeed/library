@@ -1,3 +1,6 @@
+body{
+    background-color: #373F51;
+}
 #bigContainer{
     display: flex;
 
@@ -9,13 +12,26 @@
     width: 60%;
 }
 #input{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
     width: 40%;
 }
-.heading{
-    margin: 10px;
-}
+
 .headingButton{
     height: 50px;
     width: 250px;
-    background-color: lightcoral;
+    border-radius: 5%;
+}
+#titleButton{
+    background-color: #E43F6F;
+}
+#authorButton{
+    background-color: #008DD5;
+}
+#pagesButton{
+    background-color: #DFBBB1;
+}
+#readButton{
+    background-color: #F56476;
 }

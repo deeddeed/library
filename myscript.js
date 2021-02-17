@@ -1,4 +1,3 @@
-let myLibrary = [];
 const grid = document.getElementById("books");
 
 function Books(title, author, pages, read) {
@@ -7,6 +6,7 @@ function Books(title, author, pages, read) {
   titleField.textContent = this.title;
   titleField.style.height= "50px";
   titleField.style.width= "250px";
+  titleField.style.backgroundColor = "#ffffff";
   grid.append(titleField);
 
   this.author = author;
@@ -14,6 +14,7 @@ function Books(title, author, pages, read) {
   authorField.textContent = this.author;
   authorField.style.height= "50px";
   authorField.style.width= "250px";
+  authorField.style.backgroundColor= "#ffffff";
   grid.append(authorField);
 
 
@@ -22,6 +23,7 @@ function Books(title, author, pages, read) {
   pagesField.textContent = this.pages;
   pagesField.style.height= "50px";
   pagesField.style.width= "250px";
+  pagesField.style.backgroundColor="#ffffff";
   grid.append(pagesField);
 
   this.read = read;
@@ -29,17 +31,14 @@ function Books(title, author, pages, read) {
   readField.textContent = this.read;
   readField.style.height= "50px";
   readField.style.width= "250px";
+  readField.style.backgroundColor="#ffffff";
   grid.append(readField);
+
 
   this.info = function () {
     return title + author + pages + read;
   };
 }
-
-Books.prototype.addBooksToLibrary = function (numberOfBooks) {
-  this.numberOfBooks = numberOfBooks;
-  myLibrary[numberOfBooks] = [this.info()];
-};
 
 const theHobbit = new Books(
   " The Hobbit ",
