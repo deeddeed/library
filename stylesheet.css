@@ -1,0 +1,21 @@
+#bigContainer{
+    display: flex;
+
+}
+
+#books{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+#input{
+    width: 40%;
+}
+.heading{
+    margin: 10px;
+}
+.headingButton{
+    height: 50px;
+    width: 250px;
+    background-color: lightcoral;
+}
