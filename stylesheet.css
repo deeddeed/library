@@ -35,3 +35,23 @@ body{
 #readButton{
     background-color: #F56476;
 }
+.titleButton{
+    width: 250px;
+    height: 50px;
+    background-color: #E43F6F;
+}
+.authorButton{
+    width: 250px;
+    height: 50px;
+    background-color: #008DD5;
+}
+.pagesButton{
+    width: 250px;
+    height: 50px;
+    background-color: #DFBBB1;
+}
+.readButton{
+    width: 250px;
+    height: 50px;
+    background-color: #F56476;
+}
