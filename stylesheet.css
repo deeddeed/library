@@ -18,10 +18,21 @@ body{
     width: 40%;
 }
 
+#add{
+    background-color: white;
+    height: 50px;
+    border-color: black;
+}
+#add:hover{
+    background-color: cadetblue;
+}
+
 .headingButton{
     height: 50px;
     width: 250px;
-    border-radius: 5%;
+    border: dotted 0.5mm;
+    border-color: #373F51;
+    border-radius: 2%;
 }
 #titleButton{
     background-color: #E43F6F;
@@ -39,19 +50,27 @@ body{
     width: 250px;
     height: 50px;
     background-color: #E43F6F;
+    border: 0cm;
+
 }
 .authorButton{
     width: 250px;
     height: 50px;
     background-color: #008DD5;
+    border: 0cm;
+
 }
 .pagesButton{
     width: 250px;
     height: 50px;
     background-color: #DFBBB1;
+    border: 0cm;
+
 }
 .readButton{
     width: 250px;
     height: 50px;
     background-color: #F56476;
+    border: 0cm;
+
 }

@@ -1,6 +1,5 @@
 const grid = document.getElementById("books");
 let myLibrary = [];
-let counter = 0;
 
 let titleInput = document.getElementById("title");
 let authorInput = document.getElementById("author");
@@ -8,21 +7,39 @@ let pagesInput = document.getElementById("pages");
 let readInput = document.getElementById("read");
 
 //check local storage for randomBook data
-let randomBook = JSON.parse(localStorage.getItem("randomBook"));
-console.log(randomBook.title);
+myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
 
-if (randomBook) {
-  titleInput = randomBook.title;
-  authorInput = randomBook.author;
-  pagesInput = randomBook.pages;
-  readInput = randomBook.read;
+if (myLibrary) {
+
+    
+    for(let i = 0; i < myLibrary.length; i++){
+  
+    console.log("Library = " + myLibrary.length + " myLibrary " + myLibrary.length + JSON.stringify(myLibrary));
+  
+    //creates the buttons for each book
+    titleButton = document.createElement("BUTTON");
+    titleButton.textContent = JSON.stringify(myLibrary[i].title);
+    titleButton.classList.add("titleButton");
+    authorButton = document.createElement("BUTTON");
+    authorButton.textContent = JSON.stringify(myLibrary[i].author);
+    authorButton.classList.add("authorButton");
+    pagesButton = document.createElement("BUTTON");
+    pagesButton.textContent = JSON.stringify(myLibrary[i].pages);
+    pagesButton.classList.add("pagesButton");
+    readButton = document.createElement("BUTTON");
+    readButton.textContent = JSON.stringify(myLibrary[i].read);
+    readButton.classList.add("readButton");
+    grid.append(titleButton, authorButton, pagesButton, readButton);
+    }
+  
+
 }
 
 //add a button that implements all the inputs from the user
 const addBtn = document.getElementById("add");
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
-
+  
   //get the input from the user
   let titleField = document.getElementById("title").value.trim();
   let authorField = document.getElementById("author").value.trim();
@@ -31,7 +48,7 @@ addBtn.addEventListener("click", (event) => {
 
   //if values are valid
   if (!titleField || !authorField || !pagesField || !readField) {
-    alert("Fill in the forms");
+    alert("Please fill out everything. Thank you.");
     return;
   }
 
@@ -44,9 +61,9 @@ addBtn.addEventListener("click", (event) => {
   };
 
   myLibrary.push(randomBook);
-  localStorage.setItem("randomBook", JSON.stringify(randomBook));
+  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 
-
+  //creates the buttons for each book
   let titleButton = document.createElement("BUTTON");
   titleButton.textContent = randomBook.title;
   titleButton.classList.add("titleButton");
@@ -61,76 +78,9 @@ addBtn.addEventListener("click", (event) => {
   readButton.classList.add("readButton");
 
   grid.append(titleButton, authorButton, pagesButton, readButton);
-
-  console.log(myLibrary + " Add Book" + counter);
+  
+  console.log(myLibrary + " Add Book");
 
 });
 
-//fill the array with buttons
-// function fillArray(){
 
-//   myLibrary.forEach((element) => {
-//     let titleButton = document.createElement("BUTTON");
-//     titleButton.textContent = randomBook.title;
-//     let authorButton = document.createElement("BUTTON");
-//     authorButton.textContent = randomBook.author;
-//     let pagesButton = document.createElement("BUTTON");
-//     pagesButton.textContent = randomBook.pages;
-//     let readButton = document.createElement("BUTTON");
-//     readButton.textContent = randomBook.read;
-
-//     grid.append(titleButton, authorButton, pagesButton, readButton);
-//   });
-
-//   console.log(randomBook.title);
-
-// }
-
-//create the Buttons/Divs for each element in myLibrary
-// function createButtons() {
-//   myLibrary.forEach((element) => {
-//     let button = document.createElement("BUTTON");
-//     button.textContent = JSON.parse(localStorage.getItem("element"));
-//     button.style.height = "50px";
-//     button.style.width = "550px";
-//     button.style.backgroundColor = "#ffffff";
-//     grid.append(button);
-//   });
-// }
-
-// //delete Button
-// const delBtn = document.getElementById("delete");
-// delBtn.addEventListener("click", (event) => {
-//   myLibrary.splice(counter, counter);
-//   console.log("DELETE" + myLibrary.length);
-//   counter--;
-// });
-
-
-// const theHobbit = new Books(
-//   "The Hobbit",
-//   "J.R.R Tolkien",
-//   "295 pages",
-//   "not read yet"
-// );
-
-// const georgeOrwell = new Books(
-//   "1984",
-//   "George Orwell",
-//   "241 pages",
-//   "read"
-// );
-
-// const nickBostrom = new Books(
-//   "Superintelligence",
-//   "Nick Bostrom",
-//   "311 pages",
-//   "read"
-// );
-
-// const rayKurzweil = new Books(
-//   "The Singularity Is Near",
-//   "Ray Kurzweil",
-//   "652 pages",
-//   "not yet read"
-// )
