@@ -18,14 +18,16 @@ input[type=text]{
     flex-wrap: wrap;
     justify-content: center;
     width: 60%;
-
-
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-bottom: 500px;
 }
 #input{
     display: flex;
     flex-direction: column;
     position: fixed;
     right: 10px;
+    bottom: 10px;
     margin: 10px;
     width: 35%;
 }
@@ -41,12 +43,15 @@ input[type=text]{
 .controlsBtn:hover{
     background-color: rgba(95, 158, 160, 0.65);
 }
+#delete:hover{
+    background-color: #66101F;
+}
 
 .headingButton{
     height: 50px;
     width: 280px;
     border: 0px;
-    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: -1px -1px 50px #1EFFBC;
 }
 #titleButton{
     background-color: black;
@@ -69,7 +74,7 @@ input[type=text]{
     height: 50px;
     background-color: black;
     color: #FC440F;
-    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: -1px 1px 1px #1EFFBC;
     border: 0cm;
 }
 .authorButton{
@@ -77,7 +82,7 @@ input[type=text]{
     height: 50px;
     background-color: black;
     color: #B4E33D;
-    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: -1px 1px 1px #1EFFBC;
     border: 0cm;
 
 }
@@ -86,8 +91,7 @@ input[type=text]{
     height: 50px;
     background-color: black;
     color: #7C9299;
-    box-shadow: 1px 1px 5px #1EFFBC;
-    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: -1px 1px 1px #1EFFBC;
     border: 0cm;
 }
 .readButton{
@@ -95,7 +99,7 @@ input[type=text]{
     height: 50px;
     background-color: black;
     color: #66101F;
-    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: -1px 1px 1px #1EFFBC;
     border: 0cm;
     
     }
