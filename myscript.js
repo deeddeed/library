@@ -1,5 +1,6 @@
 const grid = document.getElementById("books");
 let myLibrary = [];
+let updatedLibrary = [];
 
 let titleInput = document.getElementById("title");
 let authorInput = document.getElementById("author");
@@ -7,11 +8,11 @@ let pagesInput = document.getElementById("pages");
 let readInput = document.getElementById("read");
 
 //check local storage for randomBook data
-myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+updatedLibrary = JSON.parse(localStorage.getItem("myLibrary"));
 
-if (myLibrary) {
+if (updatedLibrary) {
 
-    
+    myLibrary = updatedLibrary;
     for(let i = 0; i < myLibrary.length; i++){
   
     console.log("Library = " + myLibrary.length + " myLibrary " + myLibrary.length + JSON.stringify(myLibrary));
@@ -39,7 +40,6 @@ if (myLibrary) {
 const addBtn = document.getElementById("add");
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  
   //get the input from the user
   let titleField = document.getElementById("title").value.trim();
   let authorField = document.getElementById("author").value.trim();
@@ -60,8 +60,6 @@ addBtn.addEventListener("click", (event) => {
     read: readField,
   };
 
-  myLibrary.push(randomBook);
-  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 
   //creates the buttons for each book
   let titleButton = document.createElement("BUTTON");
@@ -81,6 +79,6 @@ addBtn.addEventListener("click", (event) => {
   
   console.log(myLibrary + " Add Book");
 
+  myLibrary.push(randomBook);
+  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 });
-
-
