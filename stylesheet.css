@@ -24,8 +24,10 @@ input[type=text]{
 #input{
     display: flex;
     flex-direction: column;
+    position: fixed;
+    right: 10px;
     margin: 10px;
-    width: 40%;
+    width: 35%;
 }
 
 .controlsBtn{
