@@ -72,5 +72,10 @@ body{
     height: 50px;
     background-color: #F56476;
     border: 0cm;
-
+    }
+.newADD{
+    width: 250px;
+    height: 50px;
+    background-color: cadetblue;
+    border: 0cm;
 }

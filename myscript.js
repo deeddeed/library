@@ -64,16 +64,16 @@ addBtn.addEventListener("click", (event) => {
   //creates the buttons for each book
   let titleButton = document.createElement("BUTTON");
   titleButton.textContent = randomBook.title;
-  titleButton.classList.add("titleButton");
+  titleButton.classList.add("newADD");
   let authorButton = document.createElement("BUTTON");
   authorButton.textContent = randomBook.author;
-  authorButton.classList.add("authorButton");
+  authorButton.classList.add("newADD");
   let pagesButton = document.createElement("BUTTON");
   pagesButton.textContent = randomBook.pages;
-  pagesButton.classList.add("pagesButton");
+  pagesButton.classList.add("newADD");
   let readButton = document.createElement("BUTTON");
   readButton.textContent = randomBook.read;
-  readButton.classList.add("readButton");
+  readButton.classList.add("newADD");
 
   grid.append(titleButton, authorButton, pagesButton, readButton);
   
