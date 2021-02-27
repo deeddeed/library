@@ -18,12 +18,12 @@ body{
     width: 40%;
 }
 
-#add{
+.controls{
     background-color: white;
     height: 50px;
     border-color: black;
 }
-#add:hover{
+.controls:hover{
     background-color: cadetblue;
 }
 
