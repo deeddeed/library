@@ -1,15 +1,25 @@
 body{
-    background-color: #373F51;
+    background-color: #000000;
 }
 #bigContainer{
     display: flex;
+}
 
+input[type=text]{
+    background-color: rgb(19, 19, 19);
+    height: 50px;
+    color: white;
+    border-color: #1EFFBC;
+    border-width: 1px;
 }
 
 #books{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 60%;
+
+
 }
 #input{
     display: flex;
@@ -18,64 +28,79 @@ body{
     width: 40%;
 }
 
-.controls{
-    background-color: white;
+.controlsBtn{
+    background-color: black;
+    color: white;
     height: 50px;
     border-color: black;
+    border: solid #1EFFBC;
+    border-width: 1px;
 }
-.controls:hover{
-    background-color: cadetblue;
+.controlsBtn:hover{
+    background-color: rgba(95, 158, 160, 0.65);
 }
 
 .headingButton{
     height: 50px;
-    width: 250px;
-    border: dotted 0.5mm;
-    border-color: #373F51;
-    border-radius: 2%;
+    width: 280px;
+    border: 0px;
+    box-shadow: 1px 1px 5px #1EFFBC;
 }
 #titleButton{
-    background-color: #E43F6F;
+    background-color: black;
+    color: #FC440F;
 }
 #authorButton{
-    background-color: #008DD5;
+    background-color: black;
+    color: #B4E33D;
 }
 #pagesButton{
-    background-color: #DFBBB1;
+    background-color: black;
+    color: #7C9299;
 }
 #readButton{
-    background-color: #F56476;
+    background-color: black;
+    color: #66101F;
 }
 .titleButton{
-    width: 250px;
+    width: 280px;
     height: 50px;
-    background-color: #E43F6F;
+    background-color: black;
+    color: #FC440F;
+    box-shadow: 1px 1px 5px #1EFFBC;
     border: 0cm;
-
 }
 .authorButton{
-    width: 250px;
+    width: 280px;
     height: 50px;
-    background-color: #008DD5;
+    background-color: black;
+    color: #B4E33D;
+    box-shadow: 1px 1px 5px #1EFFBC;
     border: 0cm;
 
 }
 .pagesButton{
-    width: 250px;
+    width: 280px;
     height: 50px;
-    background-color: #DFBBB1;
+    background-color: black;
+    color: #7C9299;
+    box-shadow: 1px 1px 5px #1EFFBC;
+    box-shadow: 1px 1px 5px #1EFFBC;
     border: 0cm;
-
 }
 .readButton{
-    width: 250px;
+    width: 280px;
     height: 50px;
-    background-color: #F56476;
+    background-color: black;
+    color: #66101F;
+    box-shadow: 1px 1px 5px #1EFFBC;
     border: 0cm;
+    
     }
 .newADD{
-    width: 250px;
+    width: 280px;
     height: 50px;
-    background-color: cadetblue;
+    background-color: black;
+    color: cadetblue;
     border: 0cm;
 }
