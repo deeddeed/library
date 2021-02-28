@@ -17,9 +17,8 @@ input[type=text]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 60%;
+    width: 65%;
     margin-top: 50px;
-    margin-left: 25px;
     margin-bottom: 500px;
 }
 #input{
@@ -49,7 +48,7 @@ input[type=text]{
 
 .headingButton{
     height: 50px;
-    width: 280px;
+    width: 260px;
     border: 0px;
     box-shadow: -1px -1px 50px #1EFFBC;
 }
@@ -69,44 +68,86 @@ input[type=text]{
     background-color: black;
     color: #66101F;
 }
+#deleteButton{
+    width: 50px;
+    background-color: black;
+    color: white;
+}
+#deleteButton:hover{
+    color: #66101F;
+}
 .titleButton{
-    width: 280px;
+    width: 260px;
     height: 50px;
     background-color: black;
     color: #FC440F;
-    box-shadow: -1px 1px 1px #1EFFBC;
+    box-shadow: -1px 1px 1px #FC440F;
     border: 0cm;
 }
 .authorButton{
-    width: 280px;
+    width: 260px;
     height: 50px;
     background-color: black;
     color: #B4E33D;
-    box-shadow: -1px 1px 1px #1EFFBC;
+    box-shadow: -1px 1px 1px #B4E33D;
     border: 0cm;
 
 }
 .pagesButton{
-    width: 280px;
+    width: 260px;
     height: 50px;
     background-color: black;
     color: #7C9299;
-    box-shadow: -1px 1px 1px #1EFFBC;
+    box-shadow: -1px 1px 1px #7C9299;
     border: 0cm;
 }
 .readButton{
-    width: 280px;
+    width: 260px;
     height: 50px;
     background-color: black;
     color: #66101F;
-    box-shadow: -1px 1px 1px #1EFFBC;
+    box-shadow: -1px 1px 1px #66101F;
     border: 0cm;
     
     }
 .newADD{
-    width: 280px;
+    width: 260px;
     height: 50px;
     background-color: black;
     color: cadetblue;
     border: 0cm;
 }
+.counterButton{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: blanchedalmond;
+    border: 0cm;
+    
+}
+.counterButton:hover{
+    color: #66101F;
+}
+
+.deleteAll{
+    position: relative;
+    display: inline-block;
+
+}
+
+.deleteAll .deleteAllDescription{
+    visibility: hidden;
+    width: 200px;
+    color: #1EFFBC;
+    font-size: 10px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 2s;
+}
+.deleteAll:hover .deleteAllDescription{
+    visibility: visible;
+    opacity: 1;
+} 

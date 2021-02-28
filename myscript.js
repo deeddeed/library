@@ -1,10 +1,11 @@
 const grid = document.getElementById("books");
 let myLibrary = [];
 let updatedLibrary = [];
+let counter = 0;
 
 //check local storage for randomBook data
 console.log("START");
-updatedLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+updatedLibrary = JSON.parse(window.localStorage.getItem("myLibrary"));
 if (updatedLibrary) {
 
     myLibrary = updatedLibrary;
@@ -25,7 +26,11 @@ if (updatedLibrary) {
     readButton = document.createElement("BUTTON");
     readButton.textContent = myLibrary[i].read;
     readButton.classList.add("readButton");
-    grid.append(titleButton, authorButton, pagesButton, readButton);
+    counterButton = document.createElement("BUTTON");
+    counterButton.textContent = counter;
+    counterButton.classList.add("counterButton");
+    counter++;
+    grid.append(titleButton, authorButton, pagesButton, readButton, counterButton);
     }
   
 
@@ -69,24 +74,43 @@ addBtn.addEventListener("click", (event) => {
   let readButton = document.createElement("BUTTON");
   readButton.textContent = randomBook.read;
   readButton.classList.add("newADD");
-  grid.append(titleButton, authorButton, pagesButton, readButton);
+  let counterButton = document.createElement("BUTTON");
+  counterButton.textContent = counter;
+  counterButton.classList.add("counterButton");
+  grid.append(titleButton, authorButton, pagesButton, readButton, counterButton);
   
-  console.log("Add Book" + JSON.stringify(randomBook));
-
+  console.log("Add Book" + JSON.stringify(randomBook) + myLibrary.length);
+  counter++;
   myLibrary.push(randomBook);
-  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+  window.localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 });
 
 //Delete Button 
-const deleteBtn = document.getElementById("delete");
-deleteBtn.addEventListener("click", (event) => {
-  console.log("DELETE");
+function deleteButton(){
 
-  localStorage.removeItem("myLibrary");
+let changeDeleteBtn = document.getElementById("delete");
+changeDeleteBtn.style.backgroundColor = "#" + 66101 + "F";
+let deleteBtn = document.getElementsByClassName("counterButton");
+
+console.log("DELETE counterBOOKs " + counter);
+for(let i = 0; i <= counter; i++){
+deleteBtn[i].addEventListener("click", (event) => {
+  let check = deleteBtn[i].textContent;
+  myLibrary.splice(check, 1);
+  window.localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
   location.reload();
- 
-});
 
+  console.log("DELETE " +  check + JSON.stringify(myLibrary[check]) + myLibrary.length);
+
+});
+}
+
+}
+//
+function deleteAll(){
+  window.localStorage.removeItem("myLibrary");
+  location.reload();
+}
 //Save Button 
 function reload(){
   location.reload();

@@ -14,7 +14,7 @@
       <input type="text" id="read" value="READ">
       <input type="button" id="add" class="controlsBtn" value="ADD BOOK">
       <input type="button" id="save" class="controlsBtn" value="SAVE" onclick="reload()">
-      <input type="button" id="delete" class="controlsBtn" value="DELETE">
+      <input type="button" id="delete" class="controlsBtn" value="DELETE" onclick="deleteButton()">
 
     
       </div>
@@ -24,6 +24,10 @@
         <input type="button" class="headingButton" id="authorButton" value="AUTHOR">
         <input type="button" class="headingButton" id="pagesButton" value="PAGES">
         <input type="button" class="headingButton" id="readButton" value="READ">
+        <div class="deleteAll">
+        <input type="button" class="counterButton" id="deleteButton" value="X" onclick="deleteAll()">
+        <span class="deleteAllDescription">DELETES ALL</span>
+      </div>
       </div>
   
     </div>
