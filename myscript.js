@@ -7,12 +7,11 @@ let counter = 0;
 console.log("START");
 updatedLibrary = JSON.parse(window.localStorage.getItem("myLibrary"));
 if (updatedLibrary) {
+  myLibrary = updatedLibrary;
+  //loops thru each Item in myLibrary
+  for (let i = 0; i < myLibrary.length; i++) {
+    console.log("CHECK");
 
-    myLibrary = updatedLibrary;
-    //loops thru each Item in myLibrary
-    for(let i = 0; i < myLibrary.length; i++){
-      console.log("CHECK");
-    
     //creates the buttons for each book
     titleButton = document.createElement("BUTTON");
     titleButton.textContent = myLibrary[i].title;
@@ -30,10 +29,14 @@ if (updatedLibrary) {
     counterButton.textContent = counter;
     counterButton.classList.add("counterButton");
     counter++;
-    grid.append(titleButton, authorButton, pagesButton, readButton, counterButton);
-    }
-  
-
+    grid.append(
+      titleButton,
+      authorButton,
+      pagesButton,
+      readButton,
+      counterButton
+    );
+  }
 }
 
 //add a button that implements all the inputs from the user and creates a new Book Object which gets saved in myLibrary[]
@@ -60,7 +63,6 @@ addBtn.addEventListener("click", (event) => {
     read: readField,
   };
 
-
   //creates the buttons for each book
   let titleButton = document.createElement("BUTTON");
   titleButton.textContent = randomBook.title;
@@ -77,42 +79,47 @@ addBtn.addEventListener("click", (event) => {
   let counterButton = document.createElement("BUTTON");
   counterButton.textContent = counter;
   counterButton.classList.add("counterButton");
-  grid.append(titleButton, authorButton, pagesButton, readButton, counterButton);
-  
+  grid.append(
+    titleButton,
+    authorButton,
+    pagesButton,
+    readButton,
+    counterButton
+  );
+
   console.log("Add Book" + JSON.stringify(randomBook) + myLibrary.length);
   counter++;
   myLibrary.push(randomBook);
   window.localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 });
 
-//Delete Button 
-function deleteButton(){
+//Delete Button
+function deleteButton() {
+  let changeDeleteBtn = document.getElementById("delete");
+  changeDeleteBtn.style.backgroundColor = "#" + 66101 + "F";
+  let deleteBtn = document.getElementsByClassName("counterButton");
 
-let changeDeleteBtn = document.getElementById("delete");
-changeDeleteBtn.style.backgroundColor = "#" + 66101 + "F";
-let deleteBtn = document.getElementsByClassName("counterButton");
+  console.log("DELETE counterBOOKs " + counter);
+  for (let i = 0; i <= counter; i++) {
+    deleteBtn[i].addEventListener("click", (event) => {
+      let check = deleteBtn[i].textContent;
+      deleteBtn[i].style.backgroundColor = "#" + 66101 + "F";
+      myLibrary.splice(check, 1);
+      window.localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+      // location.reload();
 
-console.log("DELETE counterBOOKs " + counter);
-for(let i = 0; i <= counter; i++){
-deleteBtn[i].addEventListener("click", (event) => {
-  let check = deleteBtn[i].textContent;
-  myLibrary.splice(check, 1);
-  window.localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
-  location.reload();
-
-  console.log("DELETE " +  check + JSON.stringify(myLibrary[check]) + myLibrary.length);
-
-});
+      console.log(
+        "DELETE " + check + JSON.stringify(myLibrary[check]) + myLibrary.length
+      );
+    });
+  }
 }
 
-}
-//
-function deleteAll(){
+function deleteAll() {
   window.localStorage.removeItem("myLibrary");
   location.reload();
 }
-//Save Button 
-function reload(){
+//Save Button
+function reload() {
   location.reload();
 }
-

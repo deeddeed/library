@@ -145,9 +145,13 @@ input[type=text]{
     left: 50%;
     z-index: 1;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 1s;
 }
 .deleteAll:hover .deleteAllDescription{
     visibility: visible;
     opacity: 1;
 } 
+#save:hover{
+    background-color: #B4E33D;
+    color:black;
+}
