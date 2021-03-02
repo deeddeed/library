@@ -110,6 +110,13 @@ input[type=text]{
     border: 0cm;
     
     }
+.readButtonRead{
+    width: 260px;
+    height: 50px;
+    background-color: #1effbc2d;
+    color: #66101F;
+    box-shadow: -1px 1px 1px #66101F;
+}
 .newADD{
     width: 260px;
     height: 50px;

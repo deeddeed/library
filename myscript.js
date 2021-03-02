@@ -25,10 +25,16 @@ if (updatedLibrary) {
     readButton = document.createElement("BUTTON");
     readButton.textContent = myLibrary[i].read;
     readButton.classList.add("readButton");
+
+    if(myLibrary[i].read === "READ"){
+      console.log("READ");
+      readButton.classList.add("readButtonRead");
+    }
     counterButton = document.createElement("BUTTON");
     counterButton.textContent = counter;
     counterButton.classList.add("counterButton");
     counter++;
+
     grid.append(
       titleButton,
       authorButton,
@@ -79,6 +85,7 @@ addBtn.addEventListener("click", (event) => {
   let counterButton = document.createElement("BUTTON");
   counterButton.textContent = counter;
   counterButton.classList.add("counterButton");
+
   grid.append(
     titleButton,
     authorButton,
